@@ -1,5 +1,58 @@
-<h1>Formulário</h1>
-<form action="http://localhost:3003/usuarios" method="post">
-    <input type="text" name="nome">
-    <button>Incluir</button>
+<h1> Formulário </h1>
+<form autocomplete="on" method="POST">
+    <fieldset>
+        <legend>Cadastro</legend>
+        <input type="hidden" name="id" value="3">
+        <label for="texto">Nome</label>
+        <input type="text" name="texto">
+        <input type="password" name="senha" required>
+        <input type="email" name="email">
+        <input type="url" name="url">
+        <input type="number" name="numero">
+        <input type="date" name="data">
+        <input type="time" name="tempo">
+        <input type="week" name="semana">
+        <input type="file" name="arquivo">
+        <textarea name="bio" cols="30" rows="10"></textarea>
+        <div>
+            <input type="radio" name="tipo" value="admin"> Admin
+            <input type="radio" name="tipo" value="regular"> Regular
+            <input type="radio" name="tipo" value="professor"> Professor
+        </div>
+        <div>
+            <input type="checkbox" name="ativo"> Ativo
+        </div>
+        <select name="estado">
+            <option value="">Selecione</option>
+            <option value="ac">Acre</option>
+            <option value="pa">Pará</option>
+            <option value="ce">Ceará</option>
+        </select>
+
+        <select name="interesses" multiple size="5">
+            <option value="js">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="php">PHP</option>
+            <option value="python">Python</option>
+            <option value="go">GO</option>
+            <option value="c">C</option>
+            <option value="c++">C++</option>
+        </select>
+        <button formaction="http://localhost:3003/usuarios"> Incluir </button>
+        <button formaction="http://localhost:3003/usuarios/3"> Alterar </button>
+    </fieldset>
 </form>
+
+<style>
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        display: inline;
+    }
+</style>
