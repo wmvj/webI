@@ -1,0 +1,24 @@
+<div>
+    <video id="meuVideo" width="800" height="450" controls 
+        autoplay controlsList="nodownload">
+        <source src="imagens/video.mp4" type="video/mp4">
+         Seu browser não suporta a tag de vídeo.   
+    </video>
+</div>
+
+<div>
+    <button web-play="meuVideo">Play</button>
+    <button web-pause="meuVideo">Pause</button>
+</div>
+
+<script>
+    function configurarVideo(id){
+        var video = document.getElementById(id)
+        video.oncontextmenu = () => false 
+
+        document.querySelector(`[web-play=${id}]`).onclick = e => video.play()
+        document.querySelector(`[web-pause=${id}]`).onclick = e => video.pause()           
+    }
+    configurarVideo('meuVideo')
+</script>
+
