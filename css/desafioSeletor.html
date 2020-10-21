@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Especificidade & Seletor</title>
+    <style>
+    
+        table {
+            border-collapse: collapse;
+        }
+        th,
+        td {
+            padding: 15px;
+        }
+        
+        /* 
+        (1) Selecionar pelo “id”, todos os títulos e subtítulos e aplicar a cor do texto #3647a1. 
+        #titulo, #subtitulo{
+           color:#3647a1
+        }
+        (2) Aplicar tamanho da fonte de “50px” para os irmãos gerais “h3” do elemento “h2”.
+        h2 ~ h3{
+            font-size: 50px;
+        }
+        (3) Aplicar a cor de fonte “red” para o elemento “h2” que seja filho direto do elemento 
+            com “id” igual a “rodape”.
+        #rodape > h2 {
+            color: red;
+        }
+        (4) Aplicar a propriedade “border” com os valores: dashed, 7px, red; para a 
+            tag “div” descendente do elemento que tenha o “id” igual a “rodape”.
+         #rodape div{
+            border: dashed 7px red;
+        }
+        (5) Aplicar a cor de fundo #e3e2a6 para todos os elementos que tenham a propriedade 
+            “name” com o valor “lista”
+        [name=lista]{
+            background-color: #e3e2a6;
+        }
+
+        (6) Aplicar a cor de fonte “purple” e cor de fundo “wheat” ao elemento “tr” que seja 
+        primeiro filho de qualquer elemento pai.
+        tr:nth-child(1){
+            color: purple;
+            background-color: wheat;
+        } 
+        */
+    
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="titulo">Título</h1>
+        <h2 id="subtitulo">Subtítulo</h2>
+        <h3 id="subsubtitulo">Subsubtitulo 1</h3>
+        <h3 id="subsubtitulo">Subsubtitulo 2</h3>
+    </header>
+    <main>
+        <section>
+            <h2 id="subtitulo">Subtítulo 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Doloribus, adipisci, corrupti provident consequuntur aliquam.</p>
+        </section>
+    </main>
+    <aside>
+        <h2 id="subtitulo">Subtítulo 3</h2>
+        <div id="lista ordenada">
+            <ul class="lista" name="lista">
+                <li>Lorem ipsum</li>
+                <li>Repudiandae quidem</li>
+                <li>Quisquam veniam</li>
+                <li>Repudiandae quod</li>
+                <li>Praesentium magnam</li>
+            </ul>
+        </div id="listaNaordenada">
+        <div>
+            <ol class="lista" name="lista ordenada">
+                <li>Lorem ipsum</li>
+                <li>Repudiandae quidem</li>
+                <li>Quisquam veniam</li>
+                <li>Repudiandae quod</li>
+                <li>Praesentium magnam</li>
+            </ol>
+        </div>
+    </aside>
+    <footer id="rodape">
+        <h2 id="subtitulo">Subtítulo 4</h2>
+        <section>
+            <div name="texto">
+                <p>Quibusdam, earum, culpa sed harum laboriosam!</p>
+            </div>
+        </section>
+        <table border="1">
+            <caption> Dados técnicos do equipamento </caption>
+            <tr>
+                <th rowspan="2">modelo</th>
+                <th rowspan="2">altura</th>
+                <th rowspan="2">largura</th>
+                <th colspan="2">acessórios</th>
+            </tr>
+
+            <tr>
+                <th>USB</th>
+                <th>WI-FI</th>
+            </tr>
+
+            <tr>
+                <td>Xk-7</td>
+                <td>20</td>
+                <td>20</td>
+                <td>SIM</td>
+                <td>NÃO</td>
+            </tr>
+
+            <tr>
+                <td>WZ8</td>
+                <td>10</td>
+                <td>15</td>
+                <td>NÃO</td>
+                <td>NÃO</td>
+            </tr>
+
+            <tr>
+                <td>X15</td>
+                <td>30</td>
+                <td>30</td>
+                <td>SIM</td>
+                <td>SIM</td>
+            </tr>
+        </table>
+    </footer>
+</body>
+
+</html>
